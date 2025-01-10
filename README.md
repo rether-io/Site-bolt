@@ -1,1 +1,1 @@
-# Site-bolt
+# bolt-generated-project

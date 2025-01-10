@@ -1,0 +1,157 @@
+.final-cta {
+      background: linear-gradient(to bottom, #1A1A1A, #0D0D0D);
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-text {
+      flex: 1;
+      padding-right: 2rem;
+    }
+
+    .cta-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .guarantee-badge {
+      display: flex;
+      align-items: center;
+      background-color: #00F5A0;
+      color: #0D0D0D;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      width: fit-content;
+    }
+
+    .badge-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url('check-icon.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 10px;
+    }
+
+    .floating-form-container {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .floating-form {
+      background-color: #1A1A1A;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 245, 160, 0.2);
+      width: 100%;
+      max-width: 400px;
+      position: sticky;
+      top: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .floating-form h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .floating-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #0D0D0D;
+      color: #fff;
+    }
+
+    .floating-form button {
+      width: 100%;
+    }
+
+    .testimonial-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      background-color: #1A1A1A;
+      padding: 2rem;
+      border-radius: 10px;
+      min-width: 300px;
+      position: relative;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .quote-mark {
+      font-size: 4rem;
+      color: #00F5A0;
+      position: absolute;
+      opacity: 0.8;
+      text-shadow: 0 0 10px #00F5A0;
+    }
+
+    .quote-mark-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .quote-mark-right {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .author {
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+      .cta-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .cta-text {
+        padding-right: 0;
+      }
+
+      .floating-form-container {
+        justify-content: center;
+      }
+
+      .floating-form {
+        max-width: 100%;
+        position: static;
+        top: auto;
+      }
+    }
