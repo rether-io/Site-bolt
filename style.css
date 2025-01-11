@@ -1,67 +1,383 @@
-/* Reset e estilos base */
-* {
+body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: #0A0A0A;
+  color: #fff;
 }
 
-body {
+h1, h2, h3 {
   font-family: 'Space Grotesk', sans-serif;
-  line-height: 1.5;
-  background-color: var(--black);
-  color: var(--white);
-}
-
-:root {
-  --black: #00050d;
-  --white: #ffffff;
-  --accent: #68F7BB;
 }
 
 .container {
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
 }
 
-/* Header */
 header {
-  padding: 1rem 0;
-  position: relative;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   z-index: 100;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-nav.container {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 64px;
 }
 
 .logo h1 {
-  color: var(--white);
-  font-size: 1.5rem;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #00F5A0;
+  border-radius: 5px;
+  text-indent: -9999px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00F5A0;
 }
 
 .menu {
-  display: flex;
   list-style: none;
-  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu li {
+  margin: 0 20px;
 }
 
 .menu a {
-  color: var(--white);
   text-decoration: none;
-  font-size: 1rem;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.cta {
+  margin-left: auto;
 }
 
 .btn-whatsapp {
-  background-color: var(--accent);
-  color: var(--black);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  background-color: transparent;
+  color: #10B981;
+  padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  font-weight: 500;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
-/* Suas outras seções continuam aqui... */
+.btn-whatsapp:hover {
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hero Section */
+/* Todo o CSS original permanece igual até a parte da hero section */
+
+.hero {
+  padding: 5rem 0;
+  background-color: #0A0A0A;
+  background-image:
+    linear-gradient(to right, rgba(42, 42, 42, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(42, 42, 42, 0.3) 1px, transparent 1px);
+  background-size: 120px 120px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(42, 42, 42, 0.6);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  margin-bottom: 4rem;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.headline-split {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.headline-split span:first-child {
+  color: white;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.headline-split span:last-child {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+/* CSS específico dos botões */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 12px; /* Definido em pixels para garantir o tamanho exato */
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  min-height: 32px; /* Altura fixa para garantir consistência */
+  min-width: auto; /* Removido o min-width que estava forçando largura maior */
+}
+
+.btn-primary {
+  background: #00F5A0;
+  color: #000;
+}
+
+.btn-secondary {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+/* O resto do CSS original permanece igual */
+
+/* Features Section */
+.chat-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-interface {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1A1A1A;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1A1A1A, #1A1A1A), linear-gradient(to right, #00F5A0, #00F5A0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 15px #00F5A0;
+}
+
+.features {
+  padding: 4rem 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #1A1A1A;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
+}
+
+.icon-placeholder {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0D0D0D;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.neon-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #00F5A0;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.partnerships {
+  background: linear-gradient(to bottom, #1A1A1A, #0D0D0D);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.partnerships h2 {
+  margin-bottom: 2rem;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 3rem;
+}
+
+.partner-logo img {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #00F5A0);
+  transition: filter 0.3s ease;
+}
+
+.partner-logo img:hover {
+  filter: drop-shadow(0 0 20px #00F5A0);
+}
+
+.metrics-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.metric-card {
+  background-color: #1A1A1A;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.process {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.process h2 {
+  margin-bottom: 2rem;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.process-step {
+  position: relative;
+  width: 200px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00F5A0;
+  color: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 10px;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.process-connector {
+  width: 80px;
+  height: 2px;
+  background-color: #00F5A0;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.step-description {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1A1A1A;
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 250px;
+  z-index: 1;
+}
+
+.process-step:hover .step-description {
+  opacity: 1;
+  visibility: visible;
+}
+
+footer {
+  background-color: #1A1A1A;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 4rem;
+}
