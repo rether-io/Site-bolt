@@ -1,4 +1,15 @@
-/* Reset e estilos base */
+/* Reset e variáveis */
+:root {
+  --black: #00050d;
+  --black-light: #0D1D2D;
+  --white: #ffffff;
+  --white-opacity-70: rgba(255, 255, 255, 0.7);
+  --white-opacity-10: rgba(255, 255, 255, 0.1);
+  --white-opacity-15: rgba(255, 255, 255, 0.15);
+  --accent: #68F7BB;
+  --gradient-primary: linear-gradient(225deg, #AC6AFF 0%, #6B73FF 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +21,10 @@ body {
   line-height: 1.5;
   background-color: var(--black);
   color: var(--white-opacity-70);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Variáveis de cor */
-:root {
-  --black: #00050d;
-  --white: #ffffff;
-  --white-opacity-70: rgba(255, 255, 255, 0.7);
-  --white-opacity-10: rgba(255, 255, 255, 0.1);
-  --white-opacity-15: rgba(255, 255, 255, 0.15);
-  --accent: #68F7BB;
-}
-
-/* Container */
+/* Container e utilidades */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -38,6 +40,14 @@ header {
   right: 0;
   z-index: 1000;
   padding-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(0, 5, 13, 0.95);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  backdrop-filter: blur(10px);
 }
 
 nav.container {
@@ -83,14 +93,17 @@ nav.container {
 .cta .btn-whatsapp {
   background-color: var(--white-opacity-10);
   color: var(--white);
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .cta .btn-whatsapp:hover {
   background-color: var(--white-opacity-15);
+  transform: translateY(-1px);
 }
 
 /* Menu Mobile */
@@ -100,6 +113,7 @@ nav.container {
   border: none;
   color: var(--white);
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -116,6 +130,7 @@ nav.container {
   right: 0;
   background-color: rgba(0, 5, 13, 0.95);
   padding: 1rem 0;
+  backdrop-filter: blur(10px);
 }
 
 .menu-mobile.active {
@@ -124,7 +139,7 @@ nav.container {
 
 .menu-mobile a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   color: var(--white-opacity-70);
   text-decoration: none;
   text-transform: uppercase;
@@ -134,6 +149,52 @@ nav.container {
 
 .menu-mobile a:hover {
   color: var(--white);
+  background-color: var(--white-opacity-10);
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mantendo todos os estilos existentes abaixo */
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 115, 255, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--white-opacity-10);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white-opacity-15);
+  transform: translateY(-1px);
 }
 
 /* Resto dos seus estilos existentes... */
