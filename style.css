@@ -69,92 +69,112 @@ nav {
 }
 
 /* Hero Section */
+/* Todo o CSS original permanece igual até a parte da hero section */
+
 .hero {
- min-height: 100vh;
- padding: 10rem 2rem;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- text-align: center;
- background: 
-   linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-   repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(42,42,42,0.2) 2px, rgba(42,42,42,0.2) 4px);
+  padding: 5rem 0;
+  background-color: #0A0A0A;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    linear-gradient(to right, #2A2A2A 1px, transparent 1px),
+    linear-gradient(to bottom, #2A2A2A 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px;
+  background-position: center, 0 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
- max-width: 1200px;
- margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .top-badge {
- background: rgba(42, 42, 42, 0.6);
- backdrop-filter: blur(10px);
- border-radius: 100px;
- padding: 0.75rem 1.5rem;
- font-size: 0.875rem;
- letter-spacing: 0.05em;
- margin-bottom: 3rem;
- display: inline-flex;
- align-items: center;
- gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(42, 42, 42, 0.6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
 }
 
 .headline {
- font-size: clamp(3rem, 8vw, 5rem);
- line-height: 1.1;
- margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
-.headline span:first-child {
- color: #fff;
- text-shadow: 2px 2px 20px rgba(255,255,255,0.2);
+.headline-split {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.2;
+  display: block;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
 }
 
-.headline span:last-child {
- display: block;
- color: rgba(255,255,255,0.7);
+.headline-split span:first-child {
+  color: white;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.headline-split span:last-child {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
 }
 
 .subtitle {
- color: rgba(255,255,255,0.7);
- font-size: 1.125rem;
- max-width: 600px;
- margin: 0 auto 3rem;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
-/* Buttons */
 .hero-buttons {
- display: flex;
- gap: 1rem;
- justify-content: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .btn {
- padding: 1rem 2rem;
- border-radius: 8px;
- font-weight: 500;
- border: none;
- cursor: pointer;
- transition: all 0.2s;
- text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  border: none;
+  font-size: 0.875rem;
 }
 
 .btn-primary {
- background: linear-gradient(90deg, #00F5A0, #00D9F5);
- color: #000;
+  background: linear-gradient(90deg, #00F5A0, #00D9F5);
+  color: #000;
 }
 
 .btn-secondary {
- background: rgba(42, 42, 42, 0.6);
- backdrop-filter: blur(10px);
- color: #fff;
+  background: rgba(42, 42, 42, 0.6);
+  backdrop-filter: blur(10px);
+  color: #fff;
 }
 
 .btn:hover {
- transform: translateY(-2px);
- box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+
+/* O resto do CSS original permanece igual */
 
 /* Features Section */
 .features {
