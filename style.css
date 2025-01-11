@@ -1,6 +1,4 @@
-/* ... resto do CSS permanece igual ... */
-
-    .headline-split {
+.headline-split {
       font-size: 4rem;
       line-height: 1.2;
       display: inline-block;
@@ -48,10 +46,3 @@
         background-position: 200% 0, 0 200%, 0 0, 0 0;
       }
     }
-
-    .headline-split span {
-      display: block;
-      position: relative;
-    }
-
-/* ... resto do CSS permanece igual ... */
