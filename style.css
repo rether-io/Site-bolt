@@ -164,20 +164,25 @@ nav {
   line-height: 1.5;
 }
 
+/* CSS específico dos botões */
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 8px; /* Reduzido ainda mais */
+  gap: 8px;
 }
 
 .btn {
-  padding: 6px 16px; /* Reduzido significativamente */
-  border-radius: 12px; /* Aumentado para bordas mais suaves */
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 12px; /* Definido em pixels para garantir o tamanho exato */
   font-weight: 500;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s;
+  min-height: 32px; /* Altura fixa para garantir consistência */
+  min-width: auto; /* Removido o min-width que estava forçando largura maior */
 }
 
 .btn-primary {
@@ -186,11 +191,10 @@ nav {
 }
 
 .btn-secondary {
-  background: rgba(26, 26, 26, 0.6); /* Mais escuro e translúcido */
+  background: rgba(26, 26, 26, 0.6);
   backdrop-filter: blur(10px);
   color: #fff;
 }
-
 /* O resto do CSS original permanece igual */
 
 /* Features Section */
