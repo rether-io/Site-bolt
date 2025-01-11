@@ -107,39 +107,14 @@ nav {
   padding: 5rem 0;
   background-color: #0A0A0A;
   background-image:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
     linear-gradient(to right, #2A2A2A 1px, transparent 1px),
     linear-gradient(to bottom, #2A2A2A 1px, transparent 1px);
-  background-size: 100% 100%, 60px 60px;
+  background-size: 100% 100%, 40px 40px;
   background-position: center, 0 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.top-badge {
-  display: inline-flex;
-  align-items: center;
-  background-color: rgba(42, 42, 42, 0.6);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  margin-bottom: 3rem;
-  backdrop-filter: blur(10px);
-}
-
-.headline {
-  margin-bottom: 2rem;
 }
 
 .headline-split {
@@ -147,28 +122,7 @@ nav {
   line-height: 1.2;
   display: block;
   letter-spacing: -2px;
-  margin-bottom: 1rem;
-}
-
-.headline-split span:first-child {
-  color: white;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.headline-split span:last-child {
-  color: rgba(255, 255, 255, 0.7);
-  display: block;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  opacity: 0.7;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
+  margin-bottom: 3rem; /* Aumentado para dar mais espaço antes dos botões */
 }
 
 .hero-buttons {
@@ -180,7 +134,7 @@ nav {
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.75rem;
   text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
@@ -191,19 +145,23 @@ nav {
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, #00F5A0, #00D9F5);
+  background: #00F5A0;
   color: #000;
 }
 
 .btn-secondary {
-  background: rgba(42, 42, 42, 0.6);
-  backdrop-filter: blur(10px);
+  background: #2A2A2A;
   color: #fff;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: 3rem; /* Movido para depois dos botões */
+  opacity: 0.7;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 /* O resto do CSS original permanece igual */
