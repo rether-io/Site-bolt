@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bolt</title>
+  <title>Bolt - Bianca AI</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pricing.css">
   <link rel="stylesheet" href="cta.css">
@@ -13,7 +13,7 @@
   <header>
     <nav class="container">
       <div class="logo">
-        <h1>Logo</h1>
+        <h1>Bolt</h1>
       </div>
       <ul class="menu">
         <li><a href="#features">Features</a></li>
@@ -39,12 +39,74 @@
     </nav>
   </header>
 
-  <!-- Resto do seu conteúdo permanece o mesmo -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="top-badge">
+        <span class="badge-icon"></span>
+        SMART FINANCIAL ASSISTANT
+      </div>
+      <div class="headline">
+        <h2 class="headline-split">
+          <span>Your Personal</span>
+          <span>Finance Expert</span>
+        </h2>
+      </div>
+      <p class="subtitle">
+        Penny is your friendly AI chatbot, simplifying budgeting,
+        saving, and investing with personalized support.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">GET STARTED</button>
+        <button class="btn btn-secondary">KEY FEATURES</button>
+      </div>
+      <div class="chat-container">
+        <div class="chat-interface">
+          <h3>Chat Interface</h3>
+          <p>This is a sample chat interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mantendo todas as seções originais -->
 
   <script>
-    // Script para controlar o menu mobile
+    // Menu mobile toggle
     document.getElementById('menuButton').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.toggle('active');
+    });
+
+    // Efeitos animados originais do script.js
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animação dos valores nas métricas
+      const metricValues = document.querySelectorAll('.metric-value');
+      
+      metricValues.forEach(metric => {
+        const finalValue = parseInt(metric.getAttribute('data-value'));
+        let currentValue = 0;
+        
+        const incrementValue = () => {
+          if (currentValue < finalValue) {
+            currentValue += Math.ceil(finalValue / 50);
+            if (currentValue > finalValue) currentValue = finalValue;
+            metric.textContent = currentValue;
+            requestAnimationFrame(incrementValue);
+          }
+        };
+        
+        incrementValue();
+      });
+
+      // Carousel de testimonials
+      let currentTestimonial = 0;
+      const testimonials = document.querySelectorAll('.testimonial');
+      const totalTestimonials = testimonials.length;
+      
+      setInterval(() => {
+        testimonials.forEach(t => t.style.opacity = '0');
+        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+        testimonials[currentTestimonial].style.opacity = '1';
+      }, 5000);
     });
   </script>
 </body>
