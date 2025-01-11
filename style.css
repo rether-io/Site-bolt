@@ -1,56 +1,452 @@
+Aqui está o código CSS original completo:
+
+```css
 body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0A0A0A;
-      color: #fff;
-    }
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0A0A0A;
+  color: #fff;
+}
 
-    .headline-split {
-      font-size: 4rem;
-      line-height: 1.2;
-      display: inline-block;
-      letter-spacing: -2px;
-      position: relative;
-      background: linear-gradient(
-        180deg,
-        #FFFFFF 0%,
-        #C0C0C0 25%,
-        #808080 50%,
-        #606060 75%,
-        #404040 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.5),
-        -2px -2px 4px rgba(255, 255, 255, 0.2);
-    }
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
 
-    .headline-split::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%),
-        linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%),
-        repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0.1) 2px),
-        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0.1) 2px);
-      background-size: 200% 100%, 100% 200%, 4px 4px, 4px 4px;
-      animation: shine 3s linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      opacity: 0.5;
-    }
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    @keyframes shine {
-      0% {
-        background-position: -200% 0, 0 -200%, 0 0, 0 0;
-      }
-      100% {
-        background-position: 200% 0, 0 200%, 0 0, 0 0;
-      }
-    }
+header {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 100;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.logo h1 {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #00F5A0;
+  border-radius: 5px;
+  text-indent: -9999px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu li {
+  margin: 0 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #aaa;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.cta {
+  margin-left: auto;
+}
+
+.btn-whatsapp {
+  background-color: transparent;
+  color: #10B981;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn-whatsapp:hover {
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero {
+  padding: 5rem 0;
+  background-color: #0A0A0A;
+  background-image:
+    radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 80%),
+    linear-gradient(to right, #2A2A2A 1px, transparent 1px),
+    linear-gradient(to bottom, #2A2A2A 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px;
+  background-position: center, 0 0;
+  transition: background-size 0.3s ease;
+}
+
+.hero:hover {
+  background-size: 100% 100%, 60px 60px;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+}
+
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2A2A2A;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.top-badge .badge-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('star-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.headline {
+  margin-bottom: 1rem;
+}
+
+.headline-split {
+  font-size: 4rem;
+  line-height: 1.2;
+  display: inline-block;
+  letter-spacing: -2px;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #C0C0C0 25%,
+    #808080 50%,
+    #606060 75%,
+    #404040 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.headline-split::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%),
+    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0.1) 2px),
+    repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0.1) 2px);
+  background-size: 200% 100%, 100% 200%, 4px 4px, 4px 4px;
+  animation: shine 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.5;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0, 0 -200%, 0 0, 0 0;
+  }
+  100% {
+    background-position: 200% 0, 0 200%, 0 0, 0 0;
+  }
+}
+
+.headline-split span {
+  display: block;
+  position: relative;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #10B981;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #0e9a6e;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.btn-secondary {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #555;
+}
+
+.btn-cta {
+  background-color: transparent;
+  color: #00F5A0;
+  border: 2px solid #00F5A0;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.btn-cta:hover {
+  box-shadow: 0 0 20px #00F5A0;
+}
+
+.chat-container {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-interface {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1A1A1A;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#1A1A1A, #1A1A1A), linear-gradient(to right, #00F5A0, #00F5A0);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 0 15px #00F5A0;
+}
+
+.features {
+  padding: 4rem 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: #1A1A1A;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
+}
+
+.icon-placeholder {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0D0D0D;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.neon-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #00F5A0;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.partnerships {
+  background: linear-gradient(to bottom, #1A1A1A, #0D0D0D);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.partnerships h2 {
+  margin-bottom: 2rem;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 3rem;
+}
+
+.partner-logo img {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #00F5A0);
+  transition: filter 0.3s ease;
+}
+
+.partner-logo img:hover {
+  filter: drop-shadow(0 0 20px #00F5A0);
+}
+
+.metrics-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.metric-card {
+  background-color: #1A1A1A;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.process {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.process h2 {
+  margin-bottom: 2rem;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.process-step {
+  position: relative;
+  width: 200px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #00F5A0;
+  color: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 10px;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.process-connector {
+  width: 80px;
+  height: 2px;
+  background-color: #00F5A0;
+  box-shadow: 0 0 10px #00F5A0;
+}
+
+.step-description {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1A1A1A;
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  width: 250px;
+  z-index: 1;
+}
+
+.process-step:hover .step-description {
+  opacity: 1;
+  visibility: visible;
+}
+
+footer {
+  background-color: #1A1A1A;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 4rem;
+}
+```
+
+Substitua todo o conteúdo atual do style.css por este código.
